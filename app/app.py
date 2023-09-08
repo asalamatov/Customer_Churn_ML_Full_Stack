@@ -14,7 +14,7 @@ st.title('Predict Churn 🚀')
 st.write('Hit Predict to determine if your customer is likely to churn!')
 
 # load schema
-with open(os.path.join('.', 'schema.json')) as f:
+with open('app/schema.json') as f:
     schema = json.load(f)
 # st.write(schema)
 
@@ -52,8 +52,8 @@ for column, column_properties in schema['column_info'].items():
         options[column] = st.sidebar.selectbox(column, sorted(column_properties['values']))
 
 # load in model and encoder
-model_path = os.path.join('..', 'models', 'experiment_1', 'xg.pkl')
-encoder_path = os.path.join('..', 'models', 'experiment_1', 'encoder.pkl')
+model_path = os.path.join( 'models', 'experiment_1', 'xg.pkl') # models/experiment_1/xg.pkl
+encoder_path = os.path.join('models', 'experiment_1', 'encoder.pkl')
 with open(model_path, 'rb') as f:
     model = pickle.load(f)
 with open(encoder_path, 'rb') as f:
@@ -66,7 +66,7 @@ with open(encoder_path, 'rb') as f:
 # st.write(options)
 
 if st.button('Predict', type='primary'):
-    
+
     scoring_data = pd.Series(options).to_frame().T
     scoring_data = scoring_data[column_order_in]
 
@@ -106,7 +106,7 @@ if os.path.isfile('historical_data.csv'):
     st.pyplot(fig)
 else:
     st.write('No historical data')
-    
+
 if os.path.isfile('init_report.html'):
     html = open('init_report.html').read()
     st.components.v1.html(html, height=27800)
