@@ -1,0 +1,8 @@
+streamlit
+pandas
+pickle
+os
+json
+utils
+matplotlib
+seaborn
