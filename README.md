@@ -1,6 +1,6 @@
 # Customer Churn Prediction Project
 
-<img src="CustChurnDemo.gif" width=500> <!-- If you have a project image, add it here -->
+<img src="DemoCustomerChurn.gif" width=500> <!-- If you have a project image, add it here -->
 
 ## Table of Contents
 
