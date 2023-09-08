@@ -14,7 +14,7 @@ st.title('Predict Churn 🚀')
 st.write('Hit Predict to determine if your customer is likely to churn!')
 
 # load schema
-with open('schema.json') as f:
+with open('./schema.json') as f:
     schema = json.load(f)
 # st.write(schema)
 
